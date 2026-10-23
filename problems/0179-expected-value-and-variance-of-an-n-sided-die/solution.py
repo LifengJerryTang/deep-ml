@@ -1,0 +1,26 @@
+def dice_statistics(n: int) -> tuple[float, float]:
+	"""
+	Compute the expected value and variance of a fair n-sided die roll.
+
+	Args:
+		n (int): Number of sides of the die
+
+	Returns:
+		tuple: (expected_value, variance)
+	"""
+	# Your code here
+	expected_value = 0
+
+	for i in range(1,n+1):
+		expected_value += i
+
+	expected_value /= n
+
+	variance = 0
+
+	for i in range(1,n+1):
+		variance += pow((i - expected_value), 2)
+
+	variance /= n 
+
+	return (expected_value, variance)
